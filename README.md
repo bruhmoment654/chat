@@ -1,16 +1,17 @@
 # chat
 
-A new Flutter project.
+Данный проект - реализация простого чата на Flutter с использование firebase для хранения данных и аутентификации пользователей.
 
-## Getting Started
+В проекте реализованы несколько окон приложения: окно регистрации/входа в систему, а также окно со списком пользователей,
+которые зарегистрированы в приложении. 
 
-This project is a starting point for a Flutter application.
+Приложение предоставляет светлую и темную тему, для этого используются сгенерерированные цветовые схемы, созданные при помощи https://m3.material.io/theme-builder
 
-A few resources to get you started if this is your first Flutter project:
+На сервере firebase хранится информация о пользователях, чатах между пользователями и сообщениях в чатах. Также добавлен сервис аутентификации по почте и паролю. </br>
+![image](https://github.com/bruhmoment654/chat/assets/99661323/54fc79c0-6664-41b4-bc54-8e20aaf23819) ![Screenshot_1](https://github.com/bruhmoment654/chat/assets/99661323/6687b5bd-4b2b-41ab-a23e-79d6693614f4) </br>
+![Screenshot_2](https://github.com/bruhmoment654/chat/assets/99661323/58de1ce6-be6a-4427-805f-cb9bc559665a) ![Screenshot_3](https://github.com/bruhmoment654/chat/assets/99661323/092632d0-b329-4412-a541-3bc55f5da1b6)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+
