@@ -1,3 +1,4 @@
+import 'package:chat/pages/news_page.dart';
 import 'package:flutter/material.dart';
 
 import '../services/auth/auth_service.dart';
@@ -44,6 +45,18 @@ class MyDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => const SettingsPage()));
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 25),
+            child: ListTile(
+              title: const Text('N E W S'),
+              leading: const Icon(Icons.newspaper),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const NewsPage()));
               },
             ),
           ),
