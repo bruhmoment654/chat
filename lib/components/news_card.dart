@@ -1,6 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:shimmer/shimmer.dart';
 
 import '../data/models/remote/article.dart';
 
@@ -49,7 +47,6 @@ class NewsCard extends StatelessWidget {
                       article.title ?? '',
                       overflow: TextOverflow.ellipsis,
                       maxLines: 3,
-                      // style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     const Spacer(),
                     Align(

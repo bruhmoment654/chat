@@ -2,7 +2,6 @@ import 'package:chat/components/news_card.dart';
 import 'package:chat/data/models/remote/article.dart';
 import 'package:chat/services/news/fetch_data.dart';
 import 'package:flutter/material.dart';
-import 'package:shimmer/shimmer.dart';
 
 class NewsPage extends StatelessWidget {
   const NewsPage({super.key});
