@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../data/models/remote/article.dart';
@@ -10,22 +11,29 @@ class NewsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10)),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
       margin: const EdgeInsets.only(bottom: 30),
       height: 125,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.fitHeight,
-                    alignment: Alignment.topCenter,
-                    image: NetworkImage(article.urlToImage ?? '')),
-                borderRadius: BorderRadius.circular(10)),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
             height: 125,
             width: 125,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: CachedNetworkImage(
+                fit: BoxFit.fill,
+                alignment: Alignment.center,
+                imageUrl: article.urlToImage ?? '',
+                placeholder: (context, url) => const Padding(
+                    padding: EdgeInsets.all(25),
+                    child: CircularProgressIndicator()),
+                errorWidget: (context, _, __) =>
+                    const FlutterLogo(), //TODO: add placeholder
+              ),
+            ),
           ),
           Flexible(
             child: Padding(

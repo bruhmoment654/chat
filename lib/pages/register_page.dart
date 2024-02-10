@@ -21,6 +21,7 @@ class RegisterPage extends StatelessWidget {
       try {
         await auth.signUp(_emailController.text, _passwordController.text);
       } catch (e) {
+        if (!context.mounted) return;
         showDialog(
             context: context,
             builder: (context) => AlertDialog(
