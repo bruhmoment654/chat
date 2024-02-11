@@ -5,12 +5,12 @@ import 'package:http/http.dart' as http;
 
 Future<List<Article>> getNews() async {
   var query = {
-    'q': 'tesla',
+    'q': 'computers',
     'language': 'en',
-    'from': '2024-01-10',
+    'from': '2024-01-11',
     'sortBy': 'publishedAt',
     'apiKey': '628097e14d0e4d68a6fd6657e05a73db'
-  };
+  }; //TODO: make this dynamic (including date, topic and language (mb filters))
   var uri = Uri.https('newsapi.org', 'v2/everything', query);
   var response =
   await http.get(uri);

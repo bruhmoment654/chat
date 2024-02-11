@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 
 import '../data/models/remote/article.dart';
 
@@ -27,9 +28,18 @@ class NewsCard extends StatelessWidget {
                 fit: BoxFit.fill,
                 alignment: Alignment.center,
                 imageUrl: article.urlToImage ?? '',
-                placeholder: (context, url) => const Padding(
-                    padding: EdgeInsets.all(25),
-                    child: CircularProgressIndicator()),
+                placeholder: (context, url) => SizedBox(
+                  width: 125,
+                  height: 125,
+                  child: Shimmer.fromColors(
+                      baseColor: Colors.grey,
+                      highlightColor: Colors.white,
+                      child: Container(
+                        width: 125,
+                        height: 125,
+                        color: Colors.white,
+                      )),
+                ),
                 errorWidget: (context, _, __) =>
                     const FlutterLogo(), //TODO: add placeholder
               ),
